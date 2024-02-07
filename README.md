@@ -18,7 +18,7 @@ Understanding data structures and algorithms is crucial for writing efficient an
 
 ## Data Structures
 
-Explore the following data structures implemented in Java:
+Explore the following data structures implemented in Java in the folder Sheet_Problems:
 
 - Arrays
 - Linked Lists
