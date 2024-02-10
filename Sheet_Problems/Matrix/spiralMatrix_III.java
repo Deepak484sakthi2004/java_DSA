@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
+// problem
+// https://leetcode.com/problems/spiral-matrix-iii/
 class spiralMatrix_III {
 
     public static void main(String[] args) {
@@ -19,7 +21,7 @@ class spiralMatrix_III {
     public static int[][] spiralMatrixIII(int rows, int cols, int rStart, int cStart) {
         int directionX[] = new int[]{0, 1, 0, -1};
         int directionY[] = new int[]{1, 0, -1, 0};
-
+// int[] direction = new int[] {0,1,0,-1,0}; (i,i+1) for the x, y co ordinates!
         int nRow = rows;
         int nCol = cols;
         int x = rStart;
