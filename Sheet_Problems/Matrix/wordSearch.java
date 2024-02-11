@@ -2,13 +2,14 @@ package Matrix;
 
 public class wordSearch {
     public static void main(String[] args) {
-        // Example usage
         char[][] board = {
+                {},
                 {'A', 'B', 'C', 'E'},
                 {'S', 'F', 'C', 'S'},
                 {'A', 'D', 'E', 'E'}
         };
-        String word = "ECE";
+        // []["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]
+        String word = "ABCB";
         System.out.println(exist(board, word));  // Output: true
     }
 
