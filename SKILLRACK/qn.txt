@@ -1,0 +1,21 @@
+SHORTEST DISTANCE BETWEEN TWO CITIES
+
+DP
+CONSTONENTS COUNT IN A STRING WINDOW
+{
+equal cont vowels and consonants
+BOY - iCE Cream Kth day
+Boy chocolate or ice cream
+robot stain climbing
+{
+input 
+5 2
+2 3
+output
+2
+explaination
+
+}
+product of elements in index
+
+from to  distance
