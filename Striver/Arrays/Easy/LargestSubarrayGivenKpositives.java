@@ -1,5 +1,7 @@
 package Striver.Arrays.Easy;
 
+// https://www.codingninjas.com/studio/problems/longest-subarray-with-sum-k_6682399?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
+
 class LargestSubarrayGivenKpositives{
 public static void main(String[]args){
         System.out.println(    brute(new int[]{2,1,1,2,1,3,4,5,2,7},4));
