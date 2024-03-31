@@ -3,46 +3,55 @@ package Striver.RecursionAndBacktracking.Hard;
 public class WordSearch {
 
     public static void main(String[] args) {
-        String s = "DEEPAK";
+        String s = "DEEPAKSAKTHI";
         char[][] board = {
-                {'D','E','P','A','K'},
-                {'E','A','E','K','S'},
-                {'E','P','E','S','K'},
-                {'P','A','K','E','A'},
-                {'A','E','E','P','K'},
+                {'D', 'E', 'P', 'A', 'K'},
+                {'E', 'K', 'T', 'K', 'K'},
+                {'E', 'A', 'H', 'I', 'V'},
+                {'P', 'S', 'K', 'E', 'A'},
+                {'A', 'K', 'E', 'P', 'K'},
         };
 
         System.out.println(isAvailable(s, board));
     }
-
-    private static boolean isAvailable(String s, char[][] board) {
-        int nRow = board.length;
-        int nCol = board[0].length;
-        boolean[][] vis = new boolean[nRow][nCol];
-        for (int row = 0; row < nRow; row++) {
-            for (int col = 0; col < nCol; col++) {
-                if (wordSearch(s, board, 0, row, col, vis))
-                    return true;
+    private static boolean isAvailable(String s,char[][] board)
+    {
+        int n = board.length;
+        boolean[][] vis = new boolean[n][n];
+        for(int row =0 ;row<n;row++)
+        {
+            for(int col = 0 ;col<n;col++)
+            {
+                if(s.charAt(0)==board[row][col])
+                {
+                    if(wordAvailable(s,board,row,col,vis,0)) return true;
+                }
             }
+
         }
         return false;
     }
+    private static boolean wordAvailable(String s ,char[][] board,int row,int col,boolean[][] vis,int ind)
+    {
+        vis[row][col] = true;
+        if(ind==s.length()) return true;
 
-    private static boolean wordSearch(String s, char[][] board, int ind, int x, int y, boolean[][] vis) {
-        if (ind == s.length()) return true;
+        if(board[row][col]!= s.charAt(ind)) return false;
 
-        if (x < 0 || x >= board.length || y < 0 || y >= board[0].length || vis[x][y] || s.charAt(ind) != board[x][y])
-            return false;
+        int d[] ={0,-1,0,1,0};
 
-        vis[x][y] = true;
-        int[] d = {0, 1, 0, -1, 0};
-        for (int dir = 0; dir < 4; dir++) {
-            int xi = x + d[dir];
-            int yi = y + d[dir + 1];
-            if (wordSearch(s, board, ind + 1, xi, yi, vis))
-                return true;
+        for(int dir = 0;dir<4;dir++)
+        {
+            int xi = row+d[dir];
+            int yi = col+d[dir+1];
+            if(xi>=0 && yi>=0 && xi<board.length && yi <board[0].length && !vis[xi][yi]) {
+                vis[xi][yi] = true;
+                if (wordAvailable(s, board, xi, yi, vis, ind + 1))
+                    return true;
+                vis[xi][yi]=false;
+            }
         }
-        vis[x][y] = false; // Backtrack
+
         return false;
     }
 }
