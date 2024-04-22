@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class nQueens {
     public static void main(String[] args) {
-        int n = 10;
+        int n = 7;
         int[][] board= new int[n][n];
         System.out.println(QueenPlacement(board,0));
         for(int[] temp:board)
